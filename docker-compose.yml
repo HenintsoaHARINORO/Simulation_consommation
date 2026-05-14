@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  pv-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: groowing/pv-engine:latest
+    container_name: pv-engine
+    ports:
+      - "8501:8501"
+    volumes:
+      # Monte le répertoire courant en lecture seule (code)
+      - .:/app:ro
+      # Volume dédié aux uploads temporaires (lecture/écriture)
+      - pv_uploads:/tmp/pv_uploads
+    environment:
+      - PYTHONPATH=/app
+      # Optionnel : override via .env
+      - STREAMLIT_THEME_BASE=light
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  pv_uploads:
+    driver: local
