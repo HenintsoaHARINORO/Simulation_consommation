@@ -2,7 +2,7 @@
 
 Moteur de **simulation photovoltaïque** bâti sur une **architecture hexagonale** (Ports & Adapters). Le domaine métier est totalement découplé de l'infrastructure (CSV Enedis, PVGIS, données synthétiques) et de l'interface (CLI, Streamlit).
 
-> Pour les réponses au questionnaire de sélection, voir [responses.md](./responses.md).
+> Pour les réponses au questionnaire de sélection, voir [Reponses.md](./Reponses.md).
 
 ---
 
@@ -10,12 +10,19 @@ Moteur de **simulation photovoltaïque** bâti sur une **architecture hexagonale
 
 **Panneau de configuration**
 
-![Sidebar](./screenshots/sidebar.png)
+![Sidebar](assets/sidebar.png)
 
 **Flux energetiques mensuels**
 
-![Plot](./screenshots/plot.png)
+![Plot](assets/vue_mensuelle.png)
 
+**Vue annuelle**
+
+![Plot](assets/vue_annuelle.png)
+
+**Semaine type**
+
+![Plot](assets/semaine_type.png)
 ---
 
 ## Structure du projet
